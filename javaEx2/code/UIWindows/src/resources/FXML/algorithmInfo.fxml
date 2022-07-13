@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="1500.0" prefWidth="746.0" stylesheets="@../CSS/AlgorithmInformationStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Controllers.AlgorithmInfoController">
+  <columnConstraints>
+      <ColumnConstraints hgrow="NEVER" minWidth="30.0" prefWidth="30.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="NEVER" minWidth="30.0" prefWidth="30.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER" />
+      <RowConstraints maxHeight="140.0" minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+      <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="NEVER" />
+  </rowConstraints>
+   <children>
+      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="12">
+         <children>
+            <Label text="Generation Number:" />
+            <Label text="Population Size:" />
+            <Label text="Selection:" />
+            <Label text="Elitism size:" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="12">
+         <children>
+            <Label fx:id="generationDisplay" prefHeight="21.0" text="GenerationNumberDisplay" />
+            <Label fx:id="populationSizeDisplay" alignment="CENTER" contentDisplay="CENTER" text="PopulationSizeDisplay" />
+            <Label fx:id="selectionNameDisplay" text="SelectionNameDisplay" />
+            <Label fx:id="elitismSizeDisplay" text="ElitismSizeDisplay" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="title-vbox" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="1">
+         <children>
+            <Label alignment="CENTER" styleClass="title-label" text="Subjects" />
+         </children>
+      </VBox>
+      <TableView fx:id="subjectTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="2">
+        <columns>
+          <TableColumn fx:id="subjectTableColID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="subjectTableColName" prefWidth="75.0" text="Name" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <TableView fx:id="teacherTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="4">
+        <columns>
+          <TableColumn fx:id="teacherTableColID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="teacherTableColName" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="teacherTableColSubjectsTeaching" prefWidth="75.0" text="Subjects teaching" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <TableView fx:id="gradeTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="6">
+        <columns>
+          <TableColumn fx:id="gradeTableColID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="gradeTableColName" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="gradeTableColSubjects" prefWidth="75.0" text="Subjects" />
+            <TableColumn fx:id="gradeTableColHours" prefWidth="75.0" text="Hours" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <TableView fx:id="ruleTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="8">
+        <columns>
+          <TableColumn fx:id="ruleTableColName" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="ruleTableColSeverity" prefWidth="75.0" text="Severity" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="title-vbox" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="3">
+         <children>
+            <Label alignment="CENTER" styleClass="title-label" text="Teachers" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="title-vbox" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="5">
+         <children>
+            <Label alignment="CENTER" styleClass="title-label" text="Grades" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="title-vbox" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="7">
+         <children>
+            <Label alignment="CENTER" styleClass="title-label" text="Rules" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="title-vbox" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="9">
+         <children>
+            <Label alignment="CENTER" styleClass="title-label" text="Mutations" />
+         </children>
+      </VBox>
+      <TableView fx:id="mutationTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="10">
+        <columns>
+          <TableColumn fx:id="mutationTableColName" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="mutationTableColChance" prefWidth="75.0" text="Chance" />
+            <TableColumn fx:id="mutationTableColArguments" prefWidth="75.0" text="Arguments" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="title-vbox" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="11">
+         <children>
+            <Label alignment="CENTER" styleClass="title-label" text="General Information" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="12">
+         <children>
+            <Label text="Cross over:" />
+            <Label text="Cross over cut size:" />
+            <Label text="Hard rule weight:" />
+            <Label text="Soft rule weight:" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="12">
+         <children>
+            <Label fx:id="crossOverNameDisplay" text="CrossOverNameDisplay" />
+            <Label fx:id="crossOverCutSizeDisplay" text="CrossOverCutSizeDisplay" />
+            <Label fx:id="hardRuleWeightDisplay" text="HardRuleWeightDisplay" />
+            <Label fx:id="softRuleWeightDisplay" text="SoftRuleWeightDisplay" />
+         </children>
+      </VBox>
+   </children>
+</GridPane>

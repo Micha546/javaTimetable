@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="/UiWeb_Web_exploded/jquery-3.6.0.min.js"></script>
+    <script src="/UiWeb_Web_exploded/Utils.js"></script>
+    <script src="algorithm.js"></script>
+    <link rel="stylesheet" href="algorithm.css"/>
+    <title>Title</title>
+</head>
+<body>
+<h1>Algorithm Settings:</h1>
+<h2>PopulationSize:</h2>
+<div>
+    <label for="populationSizeSpinner" id="populationSizeSpinnerLabel">Population size:</label>
+    <input type="number" min="100" step="1" name="populationSizeSpinner" id="populationSizeSpinner"/>
+</div>
+<div>
+    <button id="savePopulationSizeButton">Save</button>
+    <button id="restorePopulationSizeChangesButton" onclick="refreshPageInformation()">Restore changes</button>
+</div>
+<div>
+    <h2>Subjects:</h2>
+    <table id="subjectTable">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+        <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+        </tr>
+    </table>
+</div>
+<div>
+    <h2>Teachers:</h2>
+    <table id="teacherTable">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Subject teaching</th>
+        </tr>
+    </table>
+</div>
+<div>
+    <h2>Grades:</h2>
+    <table id="gradeTable">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Subjects</th>
+            <th>Hours</th>
+        </tr>
+    </table>
+</div>
+<div>
+    <h2>Rules:</h2>
+    <table id="ruleTable">
+        <tr>
+            <th>Name</th>
+            <th>Severity</th>
+        </tr>
+    </table>
+</div>
+<div id="mutationAddingDiv">
+    <h2 id="mutationTitle">Mutations:</h2>
+    <label for="mutationChoiceBox" id="mutationChoiceBoxLabel">Mutation:</label>
+    <select id="mutationChoiceBox" name="mutationChoiceBox">
+        <option value="Flipping">Flipping</option>
+        <option value="Sizer">Sizer</option>
+    </select>
+    <label for="mutationChanceSpinner" id="mutationChanceSpinnerLabel">Mutation chance:</label>
+    <input type="number" max="100" min="0" step="1" value="20" name="mutationChanceSpinner" id="mutationChanceSpinner"/>
+</div>
+<div>
+    <button id="mutationAddingButton">Add mutation!</button>
+</div>
+<div>
+    <table id="mutationTable">
+        <tr>
+            <th>Name</th>
+            <th>Chance</th>
+            <th>Arguments</th>
+            <th>Delete Mutation</th>
+        </tr>
+    </table>
+</div>
+<h2>Selection:</h2>
+<div id="selectionDiv">
+    <label for="selectionChoiceBox" id="selectionChoiceBoxLabel">Selection:</label>
+    <select id="selectionChoiceBox" name="selectionChoiceBox">
+        <option value="Truncation">Truncation</option>
+        <option value="RouletteWheel">RouletteWheel</option>
+        <option value="Tournament">Tournament</option>
+    </select>
+    <label for="elitismSpinner" id="elitismSpinnerLabel">Elitism:</label>
+    <input type="number" min="0" step="1" value="0" name="elitismSpinner" id="elitismSpinner"/>
+</div>
+<div>
+    <button id="saveSelectionButton">Save selection changes</button>
+    <button id="restoreSelectionChangesButton" onclick="refreshPageInformation()">Restore changes</button>
+</div>
+<h2>CrossOver:</h2>
+<div id="crossoverDiv">
+    <label for="crossoverChoiceBox" id="crossoverChoiceBoxLabel">Crossover:</label>
+    <select id="crossoverChoiceBox" name="crossoverChoiceBox">
+        <option value="DayTimeOriented">Day Time Oriented</option>
+        <option value="AspectOriented">Aspect Oriented</option>
+    </select>
+    <label for="cutSizeSpinner" id="cutSizeSpinnerLabel">Cut size:</label>
+    <input type="number" min="1" step="1" value="2" name="cutSizeSpinner" id="cutSizeSpinner"/>
+</div>
+<div>
+    <button id="saveCrossOverButton">Save crossover changes</button>
+    <button id="restoreCrossoverChangesButton" onclick="refreshPageInformation()">Restore changes</button>
+</div>
+<div>
+    <button id="backToAlgorithmRunningButton" onclick="getBackToAlgorithmRunning()">Go back</button>
+</div>
+</body>
+</html>

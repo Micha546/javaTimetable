@@ -1,0 +1,15 @@
+
+.main-left-flowPane{
+    -fx-border-color: #9a9a9a;
+    -fx-border-width: 0 1 0 0;
+}
+
+.main-left-flowPane-Button{
+    -fx-padding: 20 20 20 20;
+    -fx-pref-width: 80;
+    -fx-pref-height: 60;
+}
+
+*{
+    -fx-font-family: Helvetica Neue;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="/UiWeb_Web_exploded/jquery-3.6.0.min.js"></script>
+    <script src="/UiWeb_Web_exploded/Utils.js"></script>
+    <script src="algorithmRunning.js"></script>
+    <link rel="stylesheet" href="algorithmRunning.css"/>
+    <title>Algorithm Page</title>
+</head>
+<body>
+<div>
+    <button id="goToSettingsPageButton" onclick="goToAlgorithm()">Settings</button>
+</div>
+<div>
+    <button id="startAlgorithmButton" onclick="onStartPress()">Start</button>
+    <button id="pauseAlgorithmButton" onclick="onPausePress()">Pause</button>
+    <button id="stopAlgorithmButton" onclick="onStopPress()">Stop</button>
+</div>
+<div>
+    <div>
+        <label for="generationLabel">Generation:</label>
+        <label id="generationLabel"></label>
+    </div>
+    <div>
+        <label for="fitnessLabel">Fitness:</label>
+        <label id="fitnessLabel"></label>
+    </div>
+</div>
+<div>
+    <h2>Stop conditions:</h2>
+    <div>
+        <label for="stopByGenerationCheckBox">By generation:</label>
+        <input type="checkbox" id="stopByGenerationCheckBox" onclick="onByGenerationClick()"/>
+        <input type="number" min="100" step="1" name="byGenerationSpinner" id="byGenerationSpinner"/>
+        <progress id="progressByGeneration" value="0" max="1"></progress>
+    </div>
+    <div>
+        <label for="stopByFitnessCheckBox">By fitness:</label>
+        <input type="checkbox" id="stopByFitnessCheckBox" onclick="onByFitnessClick()"/>
+        <input type="number" min="1" max="100" step="1" name="byFitnessSpinner" id="byFitnessSpinner"/>
+        <progress id="progressByFitness" value="0" max="1"></progress>
+    </div>
+    <div>
+        <label for="stopByTimeCheckBox">By time (in minutes):</label>
+        <input type="checkbox" id="stopByTimeCheckBox" onclick="onByTimeClick()"/>
+        <input type="number" min="1" step="1" name="byTimeSpinner" id="byTimeSpinner"/>
+        <progress id="progressByTime" value="0" max="1"></progress>
+    </div>
+    <div>
+        <h2>Best solution:</h2>
+        <div>
+            <button id="getBestSolutionButton" onclick="onGetBestSolutionButtonClick()">Get best solution</button>
+            <label for="showBestSolutionTypeSelect" id="showBestSolutionTypeSelectLabel">Show best solution by:</label>
+            <select id="showBestSolutionTypeSelect">
+                <option value="Raw">Raw</option>
+                <option value="Teacher">Teacher</option>
+                <option value="Grade">Grade</option>
+            </select>
+            <div>
+                <h3>Rules enforcement for solution:</h3>
+                <table id="ruleEnforcementTable">
+                    <tr>
+                        <th>Name</th>
+                        <th>Enforcement</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="teacherOrGradeChooseDiv"></div>
+        <div id="solutionShowDiv"></div>
+    </div>
+    <div>
+        <h2>Other users working on this algorithm:</h2>
+        <ul id="otherWorkingUsersList"></ul>
+    </div>
+    <div>
+        <a href="/UiWeb_Web_exploded/MainPage/Main.html">Go back</a>
+    </div>
+</div>
+</body>
+</html>

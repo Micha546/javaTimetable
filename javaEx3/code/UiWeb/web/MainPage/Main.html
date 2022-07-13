@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="/UiWeb_Web_exploded/jquery-3.6.0.min.js"></script>
+    <script src="/UiWeb_Web_exploded/Utils.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="main.css"/>
+    <title>Main</title>
+</head>
+<body>
+<div>
+    <h3>Connected users:</h3>
+    <ul id="connectedUsersList"></ul>
+</div>
+<div>
+    <form id="fileForm" method="post" enctype="multipart/form-data" action="fileServlet">
+        <input type="file" accept=".xml" name="fileInput" id="fileInput"/>
+        <input type="submit" value="Upload file"/>
+    </form>
+</div>
+<div id="fileUploadErrorDiv"></div>
+<div>
+    <h3>Uploaded Files:</h3>
+    <ul id="uploadedFilesList"></ul>
+    <div>
+        <table id="uploadedFilesTable">
+            <tr>
+                <th>Uploader name</th>
+                <th>Number of days</th>
+                <th>Number of hours</th>
+                <th>Number of grades</th>
+                <th>Number of teachers</th>
+                <th>Number of subjects</th>
+                <th>Number of hard rules</th>
+                <th>Number of soft rules</th>
+                <th>Number of users working</th>
+                <th>Max fitness reached</th>
+                <th>Work on this algorithm</th>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

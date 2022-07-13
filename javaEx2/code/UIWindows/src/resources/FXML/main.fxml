@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane fx:id="mainBoarderPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="628.0" prefWidth="879.0" stylesheets="@../CSS/test.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Controllers.MainController">
+   <top>
+      <MenuBar fx:id="topMenuBar" prefWidth="1254.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu text="File">
+               <items>
+                  <Menu style="-fx-pref-width: 100;" styleClass="load-menu-option" text="Load">
+                    <items>
+                      <MenuItem fx:id="topMenuBarOptionLoadFxml" mnemonicParsing="false" onAction="#loadXml" style="-fx-pref-width: 100;" text=".xml file" />
+                        <MenuItem fx:id="topMenuBarOptionLoadAlsf" mnemonicParsing="false" onAction="#loadAlsf" text=".alsf file" />
+                    </items>
+                  </Menu>
+                  <MenuItem mnemonicParsing="false" onAction="#saveAlsf" style="-fx-pref-width: 100;" styleClass="topMenuBarDropDownItem" text="Save" />
+               </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Algorithm">
+              <items>
+                <MenuItem fx:id="topMenuBarOptionRunAlgorithm" disable="true" mnemonicParsing="false" onAction="#runAlgorithm" style="-fx-pref-width: 100;" text="Run" />
+                  <MenuItem fx:id="topMenuBarOptionPauseAlgorithm" disable="true" mnemonicParsing="false" onAction="#pauseAlgorithm" text="Pause" />
+                  <MenuItem fx:id="topMenuBarOptionStopAlgorithm" disable="true" mnemonicParsing="false" onAction="#stopAlgorithm" text="Stop" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="View">
+               <items>
+                  <Menu mnemonicParsing="false" style="-fx-pref-width: 100;" text="Theme">
+                     <items>
+                        <RadioMenuItem fx:id="defaultCSSRadioMenuItem" mnemonicParsing="false" onAction="#setDefaultCSS" selected="true" style="-fx-pref-width: 100;" text="Default">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="toggle" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem fx:id="darkModeCSSRadioMenuItem" mnemonicParsing="false" onAction="#setDarkModeCSS" text="Dark Mode" toggleGroup="$toggle" />
+                        <RadioMenuItem fx:id="uglyModeCSSRadioMenuItem" mnemonicParsing="false" onAction="#setUglyModeCSS" text="Ugly Mode" toggleGroup="$toggle" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" style="-fx-pref-width: 100;" text="Animations">
+                     <items>
+                        <RadioMenuItem mnemonicParsing="false" onAction="#turnAnimationsOn" style="-fx-pref-width: 100;" text="On">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="toggleAnimations" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem mnemonicParsing="false" onAction="#turnAnimationsOff" selected="true" text="Off" toggleGroup="$toggleAnimations" />
+                     </items>
+                  </Menu>
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <ScrollPane fitToHeight="true" fitToWidth="true" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <content>
+            <FlowPane alignment="CENTER" minHeight="300.0" prefWidth="112.0" styleClass="main-left-flowPane">
+               <children>
+                  <Button fx:id="leftSideButtonStart" mnemonicParsing="false" onAction="#runAlgorithmBigButton" styleClass="main-left-flowPane-Button" text="Start">
+                     <FlowPane.margin>
+                        <Insets bottom="30.0" top="30.0" />
+                     </FlowPane.margin>
+                  </Button>
+                  <Button fx:id="leftSideButtonPause" mnemonicParsing="false" onAction="#pauseAlgorithmBigButton" styleClass="main-left-flowPane-Button" text="Pause">
+                     <FlowPane.margin>
+                        <Insets bottom="30.0" top="30.0" />
+                     </FlowPane.margin>
+                  </Button>
+                  <Button fx:id="leftSideButtonStop" mnemonicParsing="false" onAction="#stopAlgorithmBigButton" styleClass="main-left-flowPane-Button" text="Stop">
+                     <FlowPane.margin>
+                        <Insets bottom="30.0" top="30.0" />
+                     </FlowPane.margin>
+                  </Button>
+               </children>
+            </FlowPane>
+         </content>
+      </ScrollPane>
+   </left>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="algorithmOutPutTab" text="Algorithm Output">
+               <content>
+                  <ScrollPane fx:id="algorithmOutputScrollPane" fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" />
+               </content></Tab>
+          <Tab fx:id="algorithmInfoTab" text="Algorithm Info">
+               <content>
+                  <ScrollPane fx:id="algorithmInfoScrollPane" fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" />
+               </content></Tab>
+            <Tab fx:id="algorithmPropertiesTab" text="Algorithm Properties">
+               <content>
+                  <ScrollPane fx:id="algorithmPropertiesScrollPane" fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+            <Tab fx:id="bestSolutionTab" text="Best Solution">
+               <content>
+                  <ScrollPane fx:id="bestSolutionScrollPane" fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="36.0" prefWidth="879.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Generation:">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="generationNumberLabel" text="GenerationNumberLabel">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Label>
+            <Pane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+            <Label text="Fitness:">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="fitnessScoreLabel" text="FitnessScoreLabel">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Label>
+            <Pane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+            <Label text="Time Running:">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="timeRunningLabel" text="TimeRunningLabel">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
